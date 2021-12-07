@@ -1,7 +1,7 @@
 import torch
 import torch.nn as nn
 
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+#device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
 device='cpu'
 print(device)
 
@@ -13,7 +13,7 @@ class SiameseModel(nn.Module):
         self.hidden_size = 256
         self.bert = _model
         self.bert.to(device)
-        self.dropout = nn.Dropout(0.5)
+        self.dropout = nn.Dropout(0.3)
         self.num_labels = 3
         self.linear_1 = nn.Linear(768 * 3, self.hidden_size * 3)
         self.linear_2 = nn.Linear(self.hidden_size * 3, self.num_labels)
