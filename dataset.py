@@ -44,6 +44,6 @@ def prepare_data_for_training():
     train_data = SICKDataset('data/train.csv')
     test_data = SICKDataset('data/test.csv')
 
-    train_loader = DataLoader(train_data, batch_size=64, shuffle=True, num_workers=4)
-    test_loader = DataLoader(test_data, batch_size=64, shuffle=True, num_workers=4)
+    train_loader = DataLoader(train_data, batch_size=16, shuffle=True, num_workers=4)
+    test_loader = DataLoader(test_data, batch_size=16, shuffle=True, num_workers=4)
     return train_loader, test_loader

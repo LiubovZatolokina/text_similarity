@@ -12,7 +12,6 @@ from dataset import prepare_data_for_training
 from model import SiameseModel
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-device='cpu'
 print(device)
 
 bert_model = BertModel.from_pretrained('bert-base-uncased')
